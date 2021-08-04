@@ -13,10 +13,19 @@ const UserSchema = new Schema(
             required: true,
             unique: true
         },
-        thoughts: [],
+        thoughts: [
+            {
+                type: Schema.Types.ObjectId,
+                ref: 'Thought'
+            }
+        ],
         friends: []
     }
 )
+
+UserSchema.virtual('thoughtCount').get(function() {
+    return this.thoughts.reduce((total, thought) => total + thought.reactions.length + 1, 0);
+});
 
 const User = model('User', UserSchema);
 
