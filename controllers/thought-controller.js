@@ -30,7 +30,7 @@ const thoughtController = {
         )
             .then(dbUserData => {
                 if (!dbUserData) {
-                    res.status(400).json({ message: 'No thoought found with this id!' });
+                    res.status(400).json({ message: 'No thought found with this id!' });
                     return;
                 }
                 res.json(dbUserData);
