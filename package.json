@@ -1,0 +1,25 @@
+{
+  "name": "social-media-startup",
+  "version": "1.0.0",
+  "description": "## Purpose This project is to show my knowledge and understanding of making an application that is deployed to Heroku with MongoDB Atlas. This API is to be used for a social media app that allows users to share their thoughts, react to friends posts, and create a friends list.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TylerEvans-hash/social-media-startup.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TylerEvans-hash/social-media-startup/issues"
+  },
+  "homepage": "https://github.com/TylerEvans-hash/social-media-startup#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.13.5"
+  }
+}
