@@ -1,6 +1,7 @@
 const { User, Thought } = require('../models');
 
 const thoughtController = {
+    // creates a new Thought
     addThought({ params, body }, res) {
         console.log(body);
 
@@ -22,6 +23,7 @@ const thoughtController = {
             .catch(err => res.json(err));
     },
 
+    // adds a reaction to a Thought by ID
     addReaction({ params, body }, res) {
         Thought.findOneAndUpdate(
             { _id: params.thoughtId },
@@ -38,6 +40,7 @@ const thoughtController = {
             .catch(err => res.json(err));
     },
 
+    // removes a thought by ID
     removeThought({ params }, res) {
         Thought.findOneAndDelete({ _id: params.thoughtId })
             .then(deleteThought => {
@@ -60,13 +63,20 @@ const thoughtController = {
             .catch(err => res.json(err));
     },
 
-    removeReaction({ params }, res) {
-        Thought.findOneAndDelete(
+    // removes a reaction by ID
+    removeReaction({ params }, res ) {
+        Thought.findOneAndUpdate(
             { _id: params.thoughtId },
             { $pull: { reactions: { reactionId: params.reactionId } } },
             { new: true }
         )
-            .then(dbUserData => res.json(dbUserData))
+            .then(dbThoughtData => {
+                if (!dbThoughtData) {
+                    res.statsu(400).json({ message: 'No reaction found with this id!' });
+                    return;
+                }
+                res.json(dbThoughtData);
+            })
             .catch(err => res.json(err));
     }
 };
