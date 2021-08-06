@@ -1,7 +1,7 @@
 # The Social Media Startup
 
 ## Purpose
-This project is to show my knowledge and understanding of making an application that is deployed to Heroku with MongoDB Atlas. This API is to be used for a social media app that allows users to share their thoughts, react to friends posts, and create a friends list.
+This project is to show my knowledge and understanding of creating a back-end for a social media application using MongoDB Atlas and Mongoose (ODM). This API is to be used for a social media app that allows users to share their thoughts, react to friends posts, and create a friends list.
 
 ## Goals for the Project ( User Story )
 
@@ -37,6 +37,3 @@ THEN I am able to successfully create and delete reactions to thoughts and add a
 
 ## Contributors:
 - Tyler Evans
-
-## Heroku Link:
-- 
